@@ -1,4 +1,4 @@
-package com.spring.pro.hellospring.service;
+package com.spring.pro.hellospring;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

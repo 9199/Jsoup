@@ -7,7 +7,7 @@ import com.spring.pro.hellospring.ExcelUtil;
 import com.spring.pro.hellospring.entity.DoctorDetailInfo;
 import com.spring.pro.hellospring.entity.IPInfo;
 import com.spring.pro.hellospring.service.CatchDoctorInfoService;
-import com.spring.pro.hellospring.service.HTTPCommonUtil;
+import com.spring.pro.hellospring.HTTPCommonUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
