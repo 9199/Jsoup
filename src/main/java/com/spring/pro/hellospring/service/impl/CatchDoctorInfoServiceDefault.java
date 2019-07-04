@@ -7,7 +7,7 @@ import com.spring.pro.hellospring.ExcelUtil;
 import com.spring.pro.hellospring.entity.DoctorDetailInfo;
 import com.spring.pro.hellospring.entity.IPInfo;
 import com.spring.pro.hellospring.service.CatchDoctorInfoService;
-import com.spring.pro.hellospring.service.HTTPCommonUtil;
+import com.spring.pro.hellospring.HTTPCommonUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -264,6 +264,7 @@ public class CatchDoctorInfoServiceDefault implements CatchDoctorInfoService {
      * @return
      */
     private static Document collectURL(String url,String sourceUrl,List<IPInfo> ipList) {
+        HTTPCommonUtil.trustEveryone();
         Document document = null;
         Boolean flag = true;
         Integer count = 0;
@@ -302,7 +303,6 @@ public class CatchDoctorInfoServiceDefault implements CatchDoctorInfoService {
             try {
                 IPInfo ip = isHostReachable(ipList);
                 if (ip != null) {
-                    HTTPCommonUtil.trustEveryone();
                     document = Jsoup.connect(url).userAgent(ua[r.nextInt(22)]).timeout(3000).proxy(ip.getIp(), ip.getPort()).header("referer", sourceUrl).get();
                     flag = false;
                 }
