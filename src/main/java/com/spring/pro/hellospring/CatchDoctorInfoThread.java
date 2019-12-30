@@ -54,9 +54,7 @@ public class CatchDoctorInfoThread {
             futureList.add(future);
             threadNum ++;
         }
-
         System.out.println("总线程数："+threadNum);
-
         List<DoctorDetailInfo> docInfoList = new ArrayList<>();
         for (Future<List<DoctorDetailInfo>> future : futureList) {
             try {
