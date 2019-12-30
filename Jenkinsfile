@@ -1,11 +1,22 @@
 pipeline {
   agent any
   stages {
-      stage('Stage 1') {
+      stage('Check') {
           steps {
-              echo 'Hello world!'
+              echo 'Check Success!'
           }
       }
+      stage('Build') {
+          steps {
+              echo 'Build Success!'
+          }
+      }
+      stage('Image') {
+          steps {
+              echo 'Image Success!'
+          }
+      }
+
   }
   environment {
     NAME_SPACE = 'smartmi-uat'
